@@ -1,0 +1,37 @@
+/*1*/
+select count(invention_id) as Nominations, nomination_year from nominations GROUP BY nomination_year having count(invention_id)>1; 
+/*2*/
+SELECT invention_id,year_of_invention FROM Inventions ORDER BY (year_of_invention)ASC; 
+SELECT invention_id,year_of_invention FROM Inventions ORDER BY (year_of_invention)DESC; 
+/*3*/
+select * from Invention_management JOIN awards ON Invention_management.award_id=awards.award_id; 
+SELECT * from Invention_management FULL OUTER JOIN awards ON Invention_management.award_id=awards.award_id; 
+/*4*/
+SELECT * FROM Inventor WHERE job_type = 'Scientist' AND (first_name ='Javed' OR last_name = 'Habib'); 
+/*5*/
+SELECT jury_id, jury_name, start_year,end_year,(end_year-start_year) AS span FROM jury where (end_year-start_year)<=1  ;
+/*6*/ 
+select invention_name from inventions where invention_name like '%Aut%';
+/*7*/ 
+select to_char(DOB, 'MM/DD/YYYY') FROM Inventor;
+select extract(YEAR FROM DOB), inventor_id FROM Inventor;
+
+/*8*/ 
+SELECT * FROM inventions WHERE category IN ('Autonomous Systems', 'Text Understanding');
+SELECT * FROM inventions WHERE category NoT IN ('Autonomous Systems', 'Text Understanding');
+
+SELECT nomination_year FROM nominations WHERE nomination_year BETWEEN 2008 AND 2011;
+SELECT nomination_year FROM nominations WHERE nomination_year NOT BETWEEN 2008 AND 2011;
+/*9*/
+SELECT invention_id FROM Inventions INTERSECT SELECT invention_id FROM nominations;  
+SELECT DISTINCT(invention_id) FROM Inventions UNION SELECT DISTINCT(invention_id) FROM nominations; 
+
+/*10*/
+SELECT  DISTINCT (invention_id) FROM Invention_management WHERE invention_id IN (SELECT invention_id FROM nominations WHERE award_id='Awr_1001'); 
+SELECT DISTINCT invention_id, award_id FROM Invention_management WHERE EXISTS (SELECT invention_id, award_id FROM nominations);  
+SELECT DISTINCT invention_id, award_id FROM Invention_management WHERE Not EXISTS (SELECT invention_id, award_id FROM nominations);  
+
+SELECT DISTINCT invention_id FROM Invention_management WHERE invention_id = ANY(SELECT invention_id FROM nominations WHERE award_id='Awr_1004');
+SELECT DISTINCT invention_id FROM Invention_management WHERE invention_id = ALL(SELECT invention_id FROM nominations WHERE award_id!=NULL); 
+
+

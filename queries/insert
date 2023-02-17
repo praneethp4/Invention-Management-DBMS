@@ -1,0 +1,71 @@
+INSERT INTO Inventions VALUES ('Inv_1001','Autonomous Cars','ABC','26-MAR-2000','Autonomous Systems'),
+ ('Inv_1002','Automatic Web Design','DEF','12-JUL-2011','Automation of design'),
+ ('Inv_1003','Text Understanding','GHI','26-MAR-2010','Text Understanding'),
+('Inv_1004','Autonomous Cars','JKL','26-MAR-2006','Autonomous Systems'),
+ ('Inv_1005','Adobe XD','MNO','26-MAR-2008','Development Tools');
+
+select * from Inventions;
+
+INSERT INTO Inventor VALUES ('Inr_1001','Kartik ','M','13-JUL-1987','Scientist','2','3'),
+ ('Inr_1002','Yash ','P','25-FEB-1988','Scientist','b','c'),
+ ('Inr_1003','Jaswanth ','T','17-MAY-1975','Scientist','5','6'),
+ ('Inr_1004','Sameer ','Sam','28-JUL-1998','Student','e','f'),
+ ('Inr_1005','Arjun ','Reddy','19-FEB-1998','Student','8','9'),
+('Inr_1006','Praneeth ','P','18-SEP-1999','Student','h','i'),
+('Inr_1007','Javed ','Habib','01-MAY-1987','Scientist','11','12'),
+ ('Inr_1008','Satya ','M','16-DEC-1998','Student','k','l');
+
+
+INSERT INTO Jury VALUES ('Ju_1001','Virat Kohli',2000,2001),
+ ('Ju_1002','Rohit Sharma',2011,2012),
+ ('Ju_1003','Bhapayee',2010,2011),
+('Ju_1004','Brett lee',2006,2007),
+ ('Ju_1005','Shane',2008,2009),
+('Ju_1006','Harsha',2008,2009);
+
+
+
+INSERT INTO Awards VALUES ('Awr_1001','Breakthrough Autonomous Systems','Autonomous Systems','Ju_1001'),
+ ('Awr_1002','Best Automating Technology','Automation of design','Ju_1002'),
+ ('Awr_1003','The Best Software for Text Understanding','Text Understanding','Ju_1003'),
+ ('Awr_1004','The Best Potential Future Technology','Autonomous Systems','Ju_1004'),
+ ('Awr_1005','Best Tool For Development','Development Tools','Ju_1005'),
+ ('Awr_1006','Peoples Choice Best Tool','Development Tools','Ju_1006');
+
+select * from awards;
+
+
+select * from Award_nominations;
+
+INSERT INTO nominations VALUES ('Inv_1001','Awr_1001',2001),
+ ('Inv_1001','Awr_1002',2000),
+ ('Inv_1001','Awr_1004',2002),
+('Inv_1002','Awr_1002',2011),
+('Inv_1002','Awr_1004',2012),
+ ('Inv_1002','Awr_1005',2013),
+ ('Inv_1003','Awr_1003',2012),
+ ('Inv_1003','Awr_1005',2010),
+('Inv_1003','Awr_1006',2011),
+ ('Inv_1004','Awr_1004',2006),
+ ('Inv_1004','Awr_1002',2008),
+ ('Inv_1005','Awr_1005',2009),
+('Inv_1005','Awr_1006',2010);
+
+
+INSERT INTO Invention_management VALUES ('Inv_1001','Awr_1001','Inr_1001'),
+('Inv_1001','Awr_1001','Inr_1002'),
+ ('Inv_1002','Awr_1002','Inr_1003'),
+ ('Inv_1002','Awr_1002','Inr_1004'),
+ ('Inv_1003','Awr_1003','Inr_1002'),
+('Inv_1003','Awr_1003','Inr_1005'),
+ ('Inv_1004','Awr_1004','Inr_1001'),
+('Inv_1004','Awr_1004','Inr_1006'),
+ ('Inv_1005','Awr_1005','Inr_1007'),
+ ('Inv_1005','Awr_1006','Inr_1007'),
+ ('Inv_1005','Awr_1005','Inr_1008'),
+ ('Inv_1005','Awr_1006','Inr_1008');
+ 
+
+
+ 
+ 

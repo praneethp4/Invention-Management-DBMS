@@ -1,0 +1,56 @@
+create table Inventions(
+	invention_id varchar(10) primary key,
+	invention_name varchar(20),
+	story varchar(100),
+	year_of_invention date,
+	category varchar(100));
+	
+create table Inventor(
+	inventor_id varchar(10) primary key,
+	first_name varchar(10),
+	last_name varchar(10),
+	DOB date,
+	job_type varchar(20),
+	city varchar(30),
+	pincode varchar(10));
+
+create table Awards(
+	award_id varchar(10) primary key,
+	award_name varchar(40),
+	category varchar(20),
+	jury_id varchar(10),
+	foreign key (jury_id) references Jury);
+	
+create table Jury(
+	jury_id varchar(10) primary key,
+	jury_name varchar(20),
+	start_year int,
+	end_year int);
+
+create table nominations(
+	invention_id varchar(10), 
+	award_id varchar(10),
+	nomination_year int,
+	primary key(invention_id, award_id),
+	foreign key (invention_id) references Inventions,
+	foreign key (award_id) references Awards);
+	
+create table Invention_management(
+	invention_id varchar(10),
+	award_id varchar(10),
+	inventor_id varchar(10),
+	primary key (invention_id, inventor_id, award_id),
+	foreign key (invention_id) references Inventions,
+	foreign key (inventor_id) references Inventor,
+	foreign key (award_id) references Awards);
+	
+
+
+
+
+	
+
+	
+
+
+	
